@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 const Counter = (props) => {
   const [count, updateCount] = useState(props.initialValue);
 
-  const incrementCount = () => {
+  const incrementCount = useCallback(() => {
     updateCount(count + 1);
-  };
+  });
 
-  const decrementCount = () => {
+  const decrementCount = useCallback(() => {
     updateCount(count - 1);
-  };
+  });
 
   return (
     <div>
